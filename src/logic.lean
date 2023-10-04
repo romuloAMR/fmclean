@@ -61,12 +61,22 @@ end
 
 theorem impl_as_disj_converse : (¬P ∨ Q) → (P → Q)  :=
 begin
-  sorry,
+  intro np_q,
+  intro p,
+  cases np_q with np q,
+  exfalso,
+  exact np p,
+  exact q,
 end
 
 theorem disj_as_impl : (P ∨ Q) → (¬P → Q)  :=
 begin
-  sorry,
+  intro p_q,
+  intro np,
+  cases p_q with p q,
+  exfalso,
+  exact np p,
+  exact q,
 end
 
 
