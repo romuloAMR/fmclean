@@ -141,12 +141,22 @@ end
 
 theorem disj_as_negconj : P∨Q → ¬(¬P∧¬Q)  :=
 begin
-  sorry,
+  intro h,
+  intro hi,
+  cases hi with np nq,
+  cases h,
+  exact np h,
+  exact nq h,
 end
 
 theorem conj_as_negdisj : P∧Q → ¬(¬P∨¬Q)  :=
 begin
-  sorry,
+  intro h,
+  cases h with p q,
+  intro hi,
+  cases hi,
+  exact hi p,
+  exact hi q,
 end
 
 
