@@ -301,12 +301,23 @@ end
 
 theorem curry_prop : ((P∧Q)→R) → (P→(Q→R))  :=
 begin
-  sorry,
+  intro i,
+  intro p,
+  intro q,
+  apply i,
+  split,
+  exact p,
+  exact q,
 end
 
 theorem uncurry_prop : (P→(Q→R)) → ((P∧Q)→R)  :=
 begin
-  sorry,
+  intro i,
+  intro pq,
+  cases pq with p q,
+  apply i,
+  exact p,
+  exact q,
 end
 
 
