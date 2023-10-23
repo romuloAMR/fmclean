@@ -359,7 +359,8 @@
     },
     {
       "lean": "theorem mul_left_cancel (a b c : mynat) (ha : a ≠ 0) : a * b = a * c → b = c :=\n",
-      "editorText": ""
+      "isSolved": true,
+      "editorText": "induction c with d hd generalizing b,\r\nrw mul_zero,\r\nintro p,\r\nhave r := eq_zero_or_eq_zero_of_mul_eq_zero a b p,\r\ncases r,\r\nexfalso,\r\nexact ha r,\r\nexact r,\r\ninduction b with g hg,\r\nrw mul_zero,\r\nintro p,\r\nsymmetry at p,\r\nhave r := eq_zero_or_eq_zero_of_mul_eq_zero a (succ d) p,\r\ncases r,\r\nexfalso,\r\nexact ha r,\r\nsymmetry,\r\nexact r,\r\nhave s := hd g,\r\nintro r,\r\nrw mul_succ at r,\r\nrw mul_succ at r,\r\nhave t := add_right_cancel (a*g) a (a*d) r,\r\nhave x := succ_eq_succ_of_eq (s t),\r\nexact x,"
     },
     {
       "lean": "lemma one_add_le_self (x : mynat) : x ≤ 1 + x :=\n",
@@ -403,7 +404,7 @@
     },
     {
       "lean": "theorem le_total (a b : mynat) : a ≤ b ∨ b ≤ a :=\n",
-      "editorText": ""
+      "editorText": "sorry,"
     },
     {
       "lean": "lemma le_succ_self (a : mynat) : a ≤ succ a :=\n",
